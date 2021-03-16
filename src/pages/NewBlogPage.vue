@@ -1,7 +1,7 @@
 <template>
   <div class="newBlogPage">
-    <NewBlogs v-for="newStuff in state.newBlog" :key="newStuff.body" :new-blog="newStuff" />
-    {{ state.newBlog }}
+    <!-- <NewBlogs v-for="newStuff in state.newBlog" :key="newStuff.body" :new-blog="newStuff" />
+    {{ state.newBlog }} -->
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
     })
     return {
       state
+
     }
   },
   components: {}

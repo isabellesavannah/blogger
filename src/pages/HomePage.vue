@@ -54,8 +54,11 @@ export default {
       state,
       async createBlog() {
         const titleId = await blogService.createBlog(state.newBlog)
-        router.push({ name: 'NewBlog', params: { blogId: titleId } })
+        // router.push({ name: 'NewBlog', params: { blogId: titleId } })
         state.newBlog = {}
+      },
+      async deleteBlog() {
+        await blogService.deleteBlog(state.blog._id)
       }
     }
   },

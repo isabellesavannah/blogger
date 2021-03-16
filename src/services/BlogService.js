@@ -24,9 +24,18 @@ class BlogService {
   async createBlog(rawBlog) {
     try {
       const res = await blogApi.post('', rawBlog)
-      AppState.newBlog.push(res.data)
-      console.log(res.data)
+      AppState.blogs.push(res.data)
+      // console.log(res.data)
       return res.data._id
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async deleteBlog(id) {
+    try {
+      await blogApi.delete('blogs/:id')
+      this.getBlogs()
     } catch (error) {
       console.error(error)
     }

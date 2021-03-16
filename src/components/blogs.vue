@@ -1,9 +1,12 @@
 <template>
   <div class="col">
     <div class="card" style="width: 18rem;">
+      <button type="button" class="btn btn-outline-danger" @click="deleteBlog">
+        Delete Blog
+      </button>
       <img class="card-img-top" :src="blogs.imgUrl" alt="Card image cap">
       <div class="card-body">
-        <p class="card-text">
+        <p class="card-text" v-if="blogs.creator">
           {{ blogs.creator.name }}
         </p>
         <p class="card-text">
